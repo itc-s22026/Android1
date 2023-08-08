@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:context=".MenuThanksActivity">
 
     <TextView
         android:id="@+id/tvThxTitle"
@@ -41,14 +42,14 @@
         tools:text="生姜焼き定食" />
 
     <TextView
-        android:id="@+id/tvYen"
+        android:id="@+id/tvMenuPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/tv_yen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThxDesc" />
+        app:layout_constraintEnd_toStartOf="@+id/tvYens"
+        app:layout_constraintTop_toBottomOf="@+id/tvThxDesc"
+        tools:text="850" />
 
     <Button
         android:id="@+id/btThxBack"
@@ -63,13 +64,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
 
     <TextView
-        android:id="@+id/tvMenuPrice"
+        android:id="@+id/tvYens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvYen"
-        app:layout_constraintTop_toBottomOf="@+id/tvThxDesc"
-        tools:text="850" />
+        android:text="@string/tv_menu_unit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvThxDesc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
