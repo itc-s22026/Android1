@@ -20,8 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         initList(binding.lvMenu)
     }
+
     private fun initList(view: RecyclerView) {
-        view.adapter = MenuListAdapter(teishokuList, ::order)
+        menuList.addAll(teishokuList)
+        view.adapter = MenuListAdapter(menuList, ::order)
         val layoutManager = LinearLayoutManager(this)
         view.layoutManager = layoutManager
         view.addItemDecoration(DividerItemDecoration(this, layoutManager.orientation))
