@@ -1,6 +1,7 @@
 package jp.ac.it_college.std.s22026.menusample
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import jp.ac.it_college.std.s22026.menusample.databinding.ActivityMenuThanksBinding
 
@@ -24,5 +25,20 @@ class MenuThanksActivity : AppCompatActivity() {
         binding.btThxBack.setOnClickListener {
             finish()
         }
+
+        // アクションバーの戻るボタン(←)を表示させる
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val result = when(item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+        return result
     }
 }
