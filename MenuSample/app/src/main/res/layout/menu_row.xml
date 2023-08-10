@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvYen"
         app:layout_constraintEnd_toStartOf="@+id/tvYen"
         tools:text="850" />
 </androidx.constraintlayout.widget.ConstraintLayout>
