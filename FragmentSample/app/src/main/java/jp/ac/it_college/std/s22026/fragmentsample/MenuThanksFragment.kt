@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import jp.ac.it_college.std.s22026.fragmentsample.databinding.FragmentMenuThanksBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 internal const val ARG_NAME = "menuName"
 internal const val ARG_PRICE = "menuPrice"
+
+/** Fragment Result API を通じて　Activity へデータを返すためのイベント名 */
+internal const val REQUEST_BACK_MENU = "backMenu"
 
 /**
  * 注文完了を表示するためのフラグント
@@ -53,6 +57,6 @@ class MenuThanksFragment : Fragment() {
      * 戻るボタンが押された時の処理。フラグントの履歴を遡る処理。
      */
     private fun onBackButtonClick(v: View) {
-        parentFragmentManager.popBackStack()
+        parentFragmentManager.setFragmentResult(REQUEST_BACK_MENU, bundleOf())
     }
 }
